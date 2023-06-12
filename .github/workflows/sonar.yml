@@ -34,6 +34,7 @@ jobs:
               });
               let fs = require('fs');
               fs.writeFileSync(`${process.env.GITHUB_WORKSPACE}/test-results.zip`, Buffer.from(download.data));
+              console.log(context)
         - name: 'Unzip code coverage'
           run: |
             unzip test-results.zip -d coverage
